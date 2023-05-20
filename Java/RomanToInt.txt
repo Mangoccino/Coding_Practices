@@ -1,0 +1,3 @@
+Learning outcomes for RomanToInt practice:
+* Learnt to convert string into character array
+* can also use [s.toCharArray()]
