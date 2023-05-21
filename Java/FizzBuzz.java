@@ -3,33 +3,36 @@ public class FizzBuzz
     public static void main(String[] args)
     {
         //Test case n
-        int n = 20;
-        int[] nums = new int[n];
+        int n = 20; //[1, 2, 3, 4, 5, 6, ... 20] 20 items, 19 max index.
+        int[] nums = new int[n]; //new array has the same size as the old array, to add values up to n.
 
         //Create an array from 1 to n. [1, 2, 3, 4, 5...]
-        for (int i = 0, j = 1; i < n; i++, j++)
+        for (int i = 0; i < n; i++)
         {
-            nums[i] = j;
+            nums[i] = i+1;
         }
 
-        //New String array for the results
-        String[] results = new String[n];
+        String[] results = new String[n]; //results array has same items as orignal array.
+        //Convert number array into String array
 
-        for (int i : nums)
+        for (int i = 0; i < n; i++)
         {
-            if ((i%3 == 0) && (i %5 == 0))
+            if (((i+1) % 3 == 0 ) && ((i+1) % 5 == 0)) //check if divisible by 3 AND 5, it is fizzbuzz.
             {
                 results[i] = "FizzBuzz";
             }
-            else if (i%3 == 0)
+            else if ((i+1) % 3 == 0) //check 3 and 5.
             {
                 results[i] = "Fizz";
             }
-            else if (i%5 ==0)
+            else if ((i+1) % 5 == 0)
             {
                 results[i] = "Buzz";
             }
-            else results[i] = String.valueOf(i);
+            else 
+            {
+                results[i] = String.valueOf(i + 1);
+            }
         }
 
         for (String s : results)
