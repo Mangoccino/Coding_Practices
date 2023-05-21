@@ -11,28 +11,26 @@ public class twoSum {
         
          //Test case 
          int[] nums = {2, 7, 11, 15};
-         int target = 9;
+         int target = 18;
          int index = 0;
 
          int[] results = new int[2]; //New results array can only contain 2 items.
 
          //outer loop: loop through array numbers
-         for (int i = 0; i < nums.length -1; i++)
+         for (int i = 0; i < nums.length; i++)
          { //inner loop: loop through to add the one after.
             for (int j = i+1; j < nums.length; j++)
             {
-                if (nums[i] + nums[j] == target);
+                if (nums[i] + nums[j] == target)
                 {
                     results[index] = i;
                     results[index + 1] = j;
                 }
             }
          }
-         
-         for (int i : results)
+         for (int r : results)
          {
-            System.out.println(i);
+             System.out.println(r);
          }
     }
-    
 }
