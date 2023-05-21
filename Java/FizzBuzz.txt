@@ -1,0 +1,39 @@
+Learning outcomes for FizzBuzz exercise:
+- Leetcode used List<String> as a return. instead of array.
+
+To use List<String>, it uses dynamiz sizes, so it can resize as elements are added or deleted.
+List<String> also have a range of methods:
+    - add()
+    - remove()
+    - set()
+    - get()
+- allows the use of ArrayList, LinkedList or Vector
+
+To add value to the results array. 
+Instead of array[i] = this.
+Use: results.add("FizzBuzz") at the current index.
+
+This being the better code:
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class FizzBuzz {
+    public static List<String> fizzBuzz(int n) {
+        List<String> results = new ArrayList<>();
+
+        for (int i = 1; i <= n; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                results.add("FizzBuzz");
+            } else if (i % 3 == 0) {
+                results.add("Fizz");
+            } else if (i % 5 == 0) {
+                results.add("Buzz");
+            } else {
+                results.add(String.valueOf(i));
+            }
+        }
+
+        return results;
+    }
+}
