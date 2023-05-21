@@ -107,3 +107,5 @@ public class RomanToInt {
 
     }
 }
+
+//This solution has 4ms runtime (in top 5%), and uses 43.9mb of memory (NOT GOOD FOR THIS ONE)
