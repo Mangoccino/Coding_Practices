@@ -26,6 +26,7 @@ public class RomanToIntCopy {
                     {
                         num = num - 100;
                     }
+                    break;
                 }
 
                 case 'D':
@@ -33,12 +34,14 @@ public class RomanToIntCopy {
                     num = num + 500;
                     if ((i != 0) && (array[i-1] == 'C')) //if prior index is C = 100,
                     {
-                        num = num -100; //add 400 for CD, the subtract the original C that was added.
+                        num = num -100;
                     }
-                }
+                    break;
+                }                    
 
                 case 'C':
                 {
+                    num 
                     if ((i > 0) && (array[i-1] == 'X')) //if prior index is X = 10,
                     {
                         num = num + 90 - 10; //add 90 for XC, and minus 10 for before.

@@ -1,0 +1,84 @@
+// you can also use imports, for example:
+// import java.util.*;
+
+// you can write to stdout for debugging purposes, e.g.
+// System.out.println("this is a debug message");
+
+class Solution {
+    public int solution(String S) {
+        int counter = 0;
+        char temp; 
+
+        //convery string into character array
+        char[] array = new char[S.length()];
+        for (int i = 0; i < S.length(); i++)
+        {
+            array[i] = S.charAt(i);
+        }
+
+        int k = 0; 
+        int l = array.length -1; // i is index, j is last index.
+
+        for (int i = 0; i < array.length; i++)
+        {
+                    //check if first is equals to last
+            if (array[k] == array[l])
+            {
+                counter++;
+            }
+            temp = array[k];
+
+            for (int a = 0; a < array.length -1 ; a++)
+            {
+                array[a] = array[a+1];
+            }
+
+            array[l] = temp;
+        }
+        return counter;
+    }
+}
+
+
+
+class Solution {
+    public String solution(int AA, int AB, int BB) {
+        
+        String res = ""; //result string.
+        int total = AA + AB + BB;
+
+        for (int i = 0; i < total; i++)
+        {
+            
+            if ((AA > 0) && (!res.contains("AAA")))
+            {   
+                res = res + "AA";
+                AA--;
+            }
+
+            if ((BB > 0) && (!res.contains("BBB")))
+            {
+                res = res + "BB";
+                BB--;
+            }
+
+            if (AB > 0)
+            {
+                res = res + "AB";
+                AB--;
+            }
+
+            if ((res.charAt(res.length()-2) == 'A') && (res.charAt(res.length()-1) == 'A') && (BB == 0))
+            {
+                break;
+            }
+
+            if ((res.charAt(res.length()-2) == 'B') && (res.charAt(res.length()-1) == 'B') && (AA == 0) && (AB == 0))
+            {
+                break;
+            }
+        }
+    return res;
+
+    }
+}
