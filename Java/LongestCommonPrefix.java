@@ -2,38 +2,40 @@ public class LongestCommonPrefix {
     public static void main(String[] args) {
 
         //Test case
-        String[] strs = {"Dog", "Racecar", "Cars"};
-        String[] strs = {"Flowers", "Flow", "Flight"};
+        String[] strs1 = {"Dog", "Racecar", "Cars"};
+        String[] strs2 = {"Flowers", "Flow", "Flight"};
+        String[] strs = {"a", "b", "ba"};
 
-        String shortest = strs[0];
+        int min = strs[0].length();
         String output = "";
-        int counter = 0;
-        for (int i = 1; i < strs.length; i++) {
-            if (strs[i].length() < shortest.length()) {
-                shortest = strs[i];
+
+        //Find shortest word length
+        for (String s : strs)
+        {
+            if (s.length() < min)
+            {
+                min = s.length();
             }
         }
 
-        for (int j = 0; j < shortest.length(); j++) 
+        int counter = 0;
+        for (int i = 0; i < min; i++)
         {
-            for (int k =1; k < strs.length; k++) 
+            for (int k = 1; k <= min; k++)
             {
-                if (strs[0].charAt(j) != strs[k].charAt(j)) 
+                if (strs[0].charAt(i) == strs[k].charAt(i))
                 {
-                    counter = j;
-                    if (counter >= 0) 
-                    {
-                        output = strs[0].substring(0, counter);
-                    }
-                    else
-                    {
-                        output = "";
-                    }
-                    System.out.println(output);
-                    System.exit(k);  
+                    counter++;
                 }
             }
+            if (counter == strs.length -1)
+            {
+                output = "" + strs[0].charAt(i);
+            }
         }
+
+        System.out.println(output);
+
     }
 }
 
